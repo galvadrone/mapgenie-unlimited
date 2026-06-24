@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "MapGenie Unlimited Markers",
+  "version": "1.7.0",
+  "description": "Hapus batas 50 marker di MapGenie. Unlimited marking untuk semua game.",
+  "author": "Custom",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "mapgenie-unlimited@custom",
+      "strict_min_version": "109.0"
+    }
+  },
+  "icons": {
+    "48": "icon48.png",
+    "96": "icon96.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "*://mapgenie.io/*",
+    "*://*.mapgenie.io/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://mapgenie.io/*",
+        "*://*.mapgenie.io/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    "injected.js"
+  ]
+}
